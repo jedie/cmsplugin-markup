@@ -43,6 +43,7 @@ CMS_MARKUP_OPTIONS = (
     'cmsplugin_markup.plugins.textile',
     'cmsplugin_markup.plugins.restructuredtext',
     'cmsplugin_markup.plugins.creole',
+    'cmsplugin_markup.plugins.html',
 )
 CMS_MARKUP_RENDER_ALWAYS = True
 

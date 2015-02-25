@@ -47,3 +47,7 @@ class ModelTest(BaseTest):
     def test_creole2(self):
         instance = MarkupField.objects.create(body="Creole - äöüß", markup="creole")
         self.assertEqual(instance.body_html, "<p>Creole - äöüß</p>")
+
+    def test_html(self):
+        instance = MarkupField.objects.create(body="<h1>Pure HTML code</h1>", markup="html")
+        self.assertEqual(instance.body_html, "<h1>Pure HTML code</h1>")
