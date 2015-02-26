@@ -1,6 +1,6 @@
-{% extends "admin/cms/page/plugin_change_form.html" %}
+{% extends "admin/change_form.html" %}
 
-{% load i18n %}
+{% load i18n admin_static %}
 
 {% block top %}
 {% if preview %}
@@ -33,9 +33,9 @@
 {% endblock %}
 
 {% block extrahead %}{{ block.super }}
-<script type="text/javascript" src="{{ STATIC_URL }}cms/js/libs/classy.min.js"></script>
-<script type="text/javascript" src="{{ STATIC_URL }}cms/js/plugins/cms.setup.js"></script>
-<script type="text/javascript" src="{{ STATIC_URL }}cms/js/plugins/cms.base.js"></script>
+<script type="text/javascript" src="{% static 'cms/js/libs/classy.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'cms/js/plugins/cms.setup.js' %}"></script>
+<script type="text/javascript" src="{% static 'cms/js/plugins/cms.base.js' %}"></script>
 <script type="text/javascript">
 /* <![CDATA[ */
 var plugin_id = '{{ plugin.id|escapejs }}';
@@ -44,10 +44,10 @@ var auto_preview_timeout = 2.0;{% url cmsplugin_markup_preview as auto_preview_u
 var auto_preview_url = '{{ auto_preview_url|escapejs }}';
 /* ]]> */
 </script>
-<script type="text/javascript" src="{{ STATIC_URL }}cmsplugin_markup/markup_admin.js"></script>
-<script type="text/javascript" src="{{ STATIC_URL }}cmsplugin_markup/markup.js"></script>
-<script type="text/javascript" src="{{ STATIC_URL }}cms/js/libs/jquery.ui.core.js"></script>
-<script type="text/javascript" src="{{ STATIC_URL }}cms/js/placeholder_editor_registry.js"></script>
+<script type="text/javascript" src="{% static 'cmsplugin_markup/markup_admin.js' %}"></script>
+<script type="text/javascript" src="{% static 'cmsplugin_markup/markup.js' %}"></script>
+<script type="text/javascript" src="{% static 'cms/js/libs/jquery.ui.core.js' %}"></script>
+<script type="text/javascript" src="{% static 'cms/js/placeholder_editor_registry.js' %}"></script>
 <script type="text/javascript">
 /* <![CDATA[ */
 
@@ -128,6 +128,6 @@ markupPlugins['{{ p.identifier|escapejs }}'] = {
 {% endfor %}
 /* ]]> */
 </script>
-<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}cmsplugin_markup/markup.css" />
-<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}cms/css/jquery/cupertino/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" href="{% static 'cmsplugin_markup/markup.css" />
+<link rel="stylesheet" type="text/css" href="{% static 'cms/css/jquery/cupertino/jquery-ui.css" />
 {% endblock %}
